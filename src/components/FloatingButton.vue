@@ -8,7 +8,7 @@
 const {Howl} = require('howler');
 var sound = new Howl({
             // src: 'https://www.mboxdrive.com/new-home.mp3',
-            src: 'https://cdn.sndup.net/vh7x/new-home.mp3?token=mHnG6oBr0XlUPoti98fucxOWSObpzT0RIc62VoUYSgc&token_path=%2Fvh7x%2F&expires=1657376785',
+            src: 'https://cdn.jsdelivr.net/gh/arinanda/audio/new-home.mp3',
             volume: 1.0,
             html5: true,
             preload: true,
