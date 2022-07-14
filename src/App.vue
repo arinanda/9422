@@ -9,11 +9,11 @@
     <Divider />
     <Gallery />
     <Divider />
-    <!-- <Celebrate @click="handleClick" :presents="presents" /> -->
+    <Celebrate @click="handleClick" :presents="presents" />
     <Divider />
     <Map />
     <Divider />
-    <!-- <Funding /> -->
+    <Funding />
     <Divider />
     <div style="display: none">
       <Credit />
@@ -32,11 +32,10 @@ import FloatingButton from "./components/FloatingButton.vue"
 import IntroMovie from "./components/IntroMovie.vue";
 import Live from "./components/Live.vue";
 import Gallery from "./components/Gallery.vue";
-// import Funding from "./components/Funding.vue";
+import Funding from "./components/Funding.vue";
 import Credit from "./components/Credit.vue";
-// import Celebrate from "./components/Celebrate.vue";
+import Celebrate from "./components/Celebrate.vue";
 import Map from "./components/Map.vue";
-// import AddGoogleMap from "./components/AddGoogleMap.vue";
 import FlowerRain from "./components/FlowerRain.vue";
 import BottomSheet from "./components/BottomSheet.vue";
 import firebase from "firebase";
@@ -49,13 +48,12 @@ export default {
     IntroMovie,
     Live,
     Gallery,
-    // Funding,
+    Funding,
     Credit,
-    // Celebrate,
+    Celebrate,
     FlowerRain,
     BottomSheet,
     Map,
-    // AddGoogleMap
   },
   data() {
     return {
