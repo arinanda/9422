@@ -106,22 +106,22 @@ export default {
         background-repeat: no-repeat;
         background-size: cover;
         &.susan {
-          background-image: url(/wedding/img/credit/susan.jpg);
+          background-image: url(/img/credit/susan.jpg);
         }
         &.wonny {
-          background-image: url(/wedding/img/credit/wonny.jpg);
+          background-image: url(/img/credit/wonny.jpg);
         }
         &.jane {
-          background-image: url(/wedding/img/credit/jane.jpg);
+          background-image: url(/img/credit/jane.jpg);
         }
         &.anna {
-          background-image: url(/wedding/img/credit/anna.jpg);
+          background-image: url(/img/credit/anna.jpg);
         }
         &.chichi {
-          background-image: url(/wedding/img/credit/chichi.jpg);
+          background-image: url(/img/credit/chichi.jpg);
         }
         &.brown {
-          background-image: url(/wedding/img/credit/brown.jpg);
+          background-image: url(/img/credit/brown.jpg);
         }
       }
       .name {

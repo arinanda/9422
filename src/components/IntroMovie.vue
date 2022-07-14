@@ -4,9 +4,9 @@
       <img src="~@/assets/images/header-logo-2.png" />
     </div>
     <div class="movie">
-      <img src="/wedding/intro.gif">
+      <img src="/intro.gif">
       <!-- <video
-        poster="/wedding/img/video-thumbnail.jpg"
+        poster="//img/video-thumbnail.jpg"
         :autoplay="getOS() !== 'iOS'"
         controls
       >
