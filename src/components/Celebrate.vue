@@ -1,6 +1,6 @@
 <template>
   <div class="celebrate">
-    <div class="description">how to celebrate</div>
+    <!-- <div class="description">how to celebrate</div>
     <h2 class="h2">두 사람에게 축하의 마음 전하는 방법</h2>
     <p>
       직접 만나지는 못해도<br />
@@ -8,9 +8,59 @@
       축의금보다는 다른 형태의 마음을 받으면<br />
       더 의미있을거라는 생각에<br />
       2가지 방법을 준비해보았어요.
-    </p>
+    </p> -->
     <img src="~@/assets/images/goose.png" class="goose" />
-    <h2 class="h2">첫째. 쓸 때마다 당신을 떠올릴 선물하기</h2>
+    
+    <p class="dates">
+        Ahad, 4 September 2022
+    </p>
+    <p class="underline header">
+      <br/>
+      Akad Nikah
+    </p>
+    <p>
+      Pukul 08.00 - 09.00 WITA <br/>
+      Aula Masjid Al-Auliya Balikpapan
+    </p>
+    <div class="map-container" ref="gal">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3988.91407574767!2d116.8586017!3d-1.2198663!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df1471b921fb1c3%3A0xfe3fb0adc46c07a9!2sMasjid%20Al%20Auliya%20Balikpapan!5e0!3m2!1sid!2sid!4v1657374874979!5m2!1sid!2sid" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+
+    <p class="underline header">
+      <br/>
+      Resepsi
+    </p>
+    <p>
+      Pukul 10.00 - 12.00 WITA<br/>
+      Aula Masjid Al-Auliya Balikpapan<br/>
+      Jln MT Haryono (Ring Road) RT 43 Kel. Graha Indah
+      Batu Ampar, Kec. Balikpapan Utara
+      Kota Balikpapan, Kalimantan Timur
+    </p>
+
+    <div class="map-container" ref="gal">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3988.91407574767!2d116.8586017!3d-1.2198663!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df1471b921fb1c3%3A0xfe3fb0adc46c07a9!2sMasjid%20Al%20Auliya%20Balikpapan!5e0!3m2!1sid!2sid!4v1657374874979!5m2!1sid!2sid" 
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <!-- <h2 class="h2">첫째. 쓸 때마다 당신을 떠올릴 선물하기</h2>
+    
     <p class="black">
       저희가 신혼집을 꾸리고 살면서<br />
       꼭 갖고싶은 물건들을 적어보았어요.<br />
@@ -50,16 +100,16 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <img src="~@/assets/images/cat.png" class="cat" />
+    <!-- <img src="~@/assets/images/cat.png" class="cat" />
     <p class="black">
       위 리스트에 없는 선물이어도 좋습니다.<br />
       단, 티슈, 디퓨저 등은 이미 많아서<br />
       당근마켓에 팔아야 하나 고민인 수준이라 정중하게 사양할게요 :D<br />
       저희 부부를 생각하며 보내주시는 선물은<br />
       당연히 뭐든지 감사히 받겠습니다.
-    </p>
+    </p> -->
   </div>
 </template>
 
@@ -90,13 +140,17 @@ export default {
 
 <style lang="scss" scoped>
 .celebrate {
-  padding-top: 32px;
+  padding-top: 48px;
   padding-bottom: 50px;
   padding-left: $padding-vertical;
   padding-right: $padding-vertical;
   text-align: center;
   color: #295138;
   cursor: pointer;
+  .map-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
   .description {
     font-size: 12px;
     letter-spacing: 6px;
@@ -108,14 +162,28 @@ export default {
     margin-bottom: 24px;
   }
   p {
+    margin-bottom: 16px;
     line-height: 24px;
     &.black {
       color: #202121;
     }
+    &.dates {
+      font-size: 36px;
+      color: #fcba03;
+      font-weight: bolder;
+      line-height: normal;
+    }
+    &.underline {
+      text-decoration: underline;
+      padding-bottom: 0px;
+    }
+    &.header {
+      color: #295238;
+    }
   }
   .goose {
     width: 90px;
-    margin-top: 67px;
+    // margin-top: 48px;
     margin-bottom: 20px;
   }
   .cat {
