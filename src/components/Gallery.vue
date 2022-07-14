@@ -1,6 +1,7 @@
 <template>
-  <div class="live">
+  <div class="live">    
     <div>
+      <img src="~@/assets/images/flower.png" class="flower" />
       <p>
         Maha Suci Allah SWT yang telah menciptakan makhluk-Nya <br />
         berpasang-pasangan. Ya Allah perkenankan kami untuk <br />
@@ -23,33 +24,7 @@
         Putra dari Bpk. Yusmiril Rodhyan Noor <br/>
         & Ibu Fadma Noor Diana
       </p>
-      <p>
-        <br/>
-        Yang insya Allah akan diselenggarakan pada : 
-      </p>
-      <p class="dates">
-        Ahad, 4 September 2022
-      </p>
-      <p class="underline header">
-        <br/>
-        Akad Nikah
-      </p>
-      <p>
-        Pukul 08.00 - 09.00 WITA <br/>
-        Aula Masjid Al-Auliya Balikpapan
-      </p>
-      <p class="underline header">
-        Resepsi
-      </p>
-      <p>
-        Pukul 10.00 - 12.00 WITA<br/>
-        Aula Masjid Al-Auliya Balikpapan<br/>
-        Jln MT Haryono (Ring Road) RT 43 Kel. Graha Indah
-        Batu Ampar, Kec. Balikpapan Utara
-        Kota Balikpapan, Kalimantan Timur
-      </p>
     </div>
-    <!-- <Button @click="playSound">Watch Live</Button> -->
   </div>
 </template>
 
@@ -77,15 +52,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .live {
-  padding-top: 4px;
-  padding-bottom: 68px;
+  padding-top: 48px;
+  padding-bottom: 48px;
   padding-left: $padding-vertical;
   padding-right: $padding-vertical;
   text-align: center;
   .hands {
     width: 75px;
     margin-bottom: 16px;
+  }
+  .flower {
+    width: 70px;
+    margin-bottom: 26px;
   }
   p {
     margin-bottom: 16px;
@@ -119,9 +99,6 @@ export default {
     &.underline {
       text-decoration: underline;
       padding-bottom: 0px;
-    }
-    &:last-child {
-      margin-bottom: 40px;
     }
   }
 }
