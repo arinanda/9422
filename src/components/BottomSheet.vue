@@ -10,7 +10,7 @@
           <div class="bottom-sheet-header">
             <!-- <img class="image" :src="present.imageUrl" /> -->
             <img src="~@/assets/images/flower.png" class="image" />
-            <p class="">{{name}}, You're Invited!</p>
+            <p>Hi {{ name }}, You're Invited!</p>
             <!-- <img
               class="icon-close"
               @click="handleClose"
@@ -81,6 +81,7 @@ export default {
   name: "BottomSheet",
   data() {
     return {
+      name: "",
       senderName: null,
       message: null,
     };
@@ -98,11 +99,6 @@ export default {
   computed: {
   },
   methods: {
-    methods: {
-      playSound() {
-        return sound.playing() ? sound.pause() : sound.play();
-        },
-    },
     handleClose() {
       this.$emit("close");
       return sound.playing() ? sound.pause() : sound.play();
@@ -234,6 +230,7 @@ export default {
         margin-right: auto; 
         color: #295238;
         text-align: center;
+        padding-top: 10px;
       }
 
     .bottom-sheet-header {
