@@ -1,23 +1,24 @@
 <template>
   <div>
     <transition name="fade" appear>
-      <div class="overlay" v-show="isOpen" @click="handleClose" />
+      <div class="overlay" v-show="isOpen" />
     </transition>
 
     <transition name="slide" appear>
       <div class="bottom-sheet-container" v-show="isOpen">
         <div class="bottom-sheet">
           <div class="bottom-sheet-header">
-            <img class="image" :src="present.imageUrl" />
-
-            <img
+            <!-- <img class="image" :src="present.imageUrl" /> -->
+            <img src="~@/assets/images/flower.png" class="image" />
+            <p class="">{{name}}, You're Invited!</p>
+            <!-- <img
               class="icon-close"
               @click="handleClose"
               src="~@/assets/images/close.svg"
-            />
+            /> -->
           </div>
 
-          <div class="form-container">
+          <!-- <div class="form-container">
             <div class="form-header">
               <div class="title">{{ present.name }} | {{ present.model }}</div>
               <div class="price-container">
@@ -49,13 +50,13 @@
                 선물하기를 누르면 신혼집 주소가 자동 복사됩니다.
               </div>
             </div>
-          </div>
+          </div> -->
 
           <button
-            :class="['button-bottom', { active: isValid }]"
-            @click="handleClick"
+            :class="['button-bottom', { active: true }]"
+            @click="handleClose"
           >
-            선물하기
+            Buka Undangan
           </button>
         </div>
       </div>
@@ -64,7 +65,17 @@
 </template>
 
 <script>
-import firebase from "firebase";
+// import firebase from "firebase";
+const {Howl} = require('howler');
+var sound = new Howl({
+            // src: 'https://www.mboxdrive.com/new-home.mp3',
+            src: 'https://cdn.jsdelivr.net/gh/arinanda/audio/new-home.mp3',
+            volume: 1.0,
+            html5: true,
+            preload: true,
+            autoplay: true,
+            loop: true
+        });
 
 export default {
   name: "BottomSheet",
@@ -77,7 +88,7 @@ export default {
   props: {
     isOpen: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     present: {
       type: Object,
@@ -85,66 +96,70 @@ export default {
     },
   },
   computed: {
-    isValid() {
-      return !!this.senderName && !!this.message;
-    },
   },
   methods: {
+    methods: {
+      playSound() {
+        return sound.playing() ? sound.pause() : sound.play();
+        },
+    },
     handleClose() {
       this.$emit("close");
+      return sound.playing() ? sound.pause() : sound.play();
     },
-    handleClick() {
-      if (!this.isValid) {
-        alert("이름과 메시지를 입력해주세요.");
-        return;
-      }
 
-      const isConfirmed = confirm(
-        `정말 ${this.present.name} 선물을 하시겠어요? 확인해주시면 선물 완료로 표시됩니다.`
-      );
 
-      if (!isConfirmed) {
-        return;
-      }
+    // handleClick() {
 
-      firebase
-        .database()
-        .ref("presents/" + this.present.id)
-        .set(
-          {
-            ...this.present,
-            isSoldout: true,
-            senderName: this.senderName,
-            message: this.message,
-          },
-          (error) => {
-            if (error) {
-              console.error(error.message);
-              return;
-            }
+    //   const isConfirmed = confirm(
+    //     `정말 ${this.present.name} 선물을 하시겠어요? 확인해주시면 선물 완료로 표시됩니다.`
+    //   );
 
-            this.copyAddress();
-            window.open(this.present.link);
-            this.handleClose();
-            this.senderName = null;
-            this.message = null;
-          }
-        );
-    },
-    copyAddress() {
-      const address = "서울시 강남구 역삼동 792-33 서담빌리지A동 205호";
-      this.$copyText(address).then(
-        function () {
-          alert("신혼집 주소가 복사되었어요. 구매링크로 이동합니다~!");
-        },
-        function () {
-          prompt(
-            "아래 신혼집 주소를 복사해주세요. 확인 눌러주시면 구매링크로 이동합니다~!",
-            address
-          );
-        }
-      );
-    },
+    //   if (!isConfirmed) {
+    //     return;
+    //   }
+
+    //   firebase
+    //     .database()
+    //     .ref("presents/" + this.present.id)
+    //     .set(
+    //       {
+    //         ...this.present,
+    //         isSoldout: true,
+    //         senderName: this.senderName,
+    //         message: this.message,
+    //       },
+    //       (error) => {
+    //         if (error) {
+    //           console.error(error.message);
+    //           return;
+    //         }
+
+    //         this.copyAddress();
+    //         window.open(this.present.link);
+    //         this.handleClose();
+    //         this.senderName = null;
+    //         this.message = null;
+    //       }
+    //     );
+    // },
+    // copyAddress() {
+    //   const address = "서울시 강남구 역삼동 792-33 서담빌리지A동 205호";
+    //   this.$copyText(address).then(
+    //     function () {
+    //       alert("신혼집 주소가 복사되었어요. 구매링크로 이동합니다~!");
+    //     },
+    //     function () {
+    //       prompt(
+    //         "아래 신혼집 주소를 복사해주세요. 확인 눌러주시면 구매링크로 이동합니다~!",
+    //         address
+    //       );
+    //     }
+    //   );
+    // },
+  },
+  mounted() {
+    this.name = this.$route.query.name;
   },
 };
 </script>
@@ -199,6 +214,27 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    .image {
+        width: 70px;
+        position: absolute;
+        top: 45%;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+        transform: translateY(-50%);
+      }
+
+      p {
+        position: absolute;
+        top: 55%;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+        color: #295238;
+        text-align: center;
+      }
 
     .bottom-sheet-header {
       position: relative;
@@ -208,13 +244,6 @@ export default {
       border-top-right-radius: 10px;
       overflow: hidden;
       flex: 10 1;
-      .image {
-        width: 100%;
-        object-fit: cover;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-      }
 
       .icon-close {
         position: absolute;
