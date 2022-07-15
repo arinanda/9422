@@ -2,6 +2,7 @@
 
 <template>
   <div id="kyong">
+    <router-view></router-view>
     <FlowerRain />
     <IntroMovie />
     <!-- <FloatingButton /> -->

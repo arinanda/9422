@@ -1,8 +1,9 @@
 <template>
   <div id="kyong">
+    <router-view></router-view>
     <FlowerRain />
     <IntroMovie />
-    <FloatingButton />
+    <!-- <FloatingButton /> -->
     <Live />
     <Divider />
     <Gallery />
@@ -26,7 +27,7 @@
 </template>
 
 <script>
-import FloatingButton from "./components/FloatingButton.vue"
+// import FloatingButton from "./components/FloatingButton.vue"
 import IntroMovie from "./components/friends/IntroMovie.vue";
 import Live from "./components/Live.vue";
 import Gallery from "./components/Gallery.vue";
@@ -41,7 +42,7 @@ import firebase from "firebase";
 export default {
   name: "Friends",
   components: {
-    FloatingButton,
+    // FloatingButton,
     IntroMovie,
     Live,
     Gallery,
