@@ -21,6 +21,7 @@
     "vue-daum-map": "^1.1.0",
     "vue-fab": "^2.3.1",
     "vue-float-action-button": "^0.7.9",
+    "vue-router": "^2.8.1",
     "vue2-google-maps": "^0.10.7",
     "vuejs-google-maps": "^0.2.0"
   },
