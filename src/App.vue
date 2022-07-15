@@ -4,7 +4,7 @@
   <div id="kyong">
     <FlowerRain />
     <IntroMovie />
-    <FloatingButton />
+    <!-- <FloatingButton /> -->
     <Live />
     <Divider />
     <Gallery />
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import FloatingButton from "./components/FloatingButton.vue"
+// import FloatingButton from "./components/FloatingButton.vue"
 import IntroMovie from "./components/IntroMovie.vue";
 import Live from "./components/Live.vue";
 import Gallery from "./components/Gallery.vue";
@@ -39,12 +39,11 @@ import Map from "./components/Map.vue";
 import FlowerRain from "./components/FlowerRain.vue";
 import BottomSheet from "./components/BottomSheet.vue";
 import firebase from "firebase";
-// const {Howl} = require('howler');
 
 export default {
   name: "App",
   components: {
-    FloatingButton,
+    // FloatingButton,
     IntroMovie,
     Live,
     Gallery,
@@ -57,14 +56,13 @@ export default {
   },
   data() {
     return {
-      isOpen: false,
+      isOpen: true,
       presents: [],
       selectedPresent: {},
     };
   },
   created() {
     this.loadPresents();
-    // this.playSound();
   },
   methods: {
     loadPresents() {
@@ -86,16 +84,6 @@ export default {
     handleClose() {
       this.isOpen = false;
     },
-    // playSound() {
-    //     var sound = new Howl({
-    //         src: ['../public/audio/new-home.mp3'],
-    //         volume: 0.1,
-    //         preload: true,
-    //         autoplay: true,
-    //         loop: true
-    //     });
-    //     sound.play();
-    // }
   },
 };
 </script>
