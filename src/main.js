@@ -10,31 +10,34 @@ import firebase from 'firebase/app'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import VueClipboard from 'vue-clipboard2'
+import VueRouter from 'vue-router'
 
 Vue.config.productionTip = false
 
 Vue.use(VueFab)
 Vue.use(VScrollLock)
 Vue.use(VueClipboard)
+Vue.use(VueRouter)
 Vue.component('Divider', Divider)
 Vue.component('Button', Button)
 
-const NotFound = { template: '<p>Page not found</p>' }
+// const NotFound = { template: '<p>Page not found</p>' }
 
-// const routes = [
-//   { path: "/hello", component: App },
+const routes = [
+  { path: "/", component: App, props: (route) => ({ name: route.query.name }) },
+  { path: "/families", component: Families },
+  { path: "/friends", component: Friends },
+];
 
-// ];
+// const routes = {
+//   '/': App,
+//   '/families': Families,
+//   '/friends': Friends
+// };
 
-const routes = {
-  '/': App,
-  '/families': Families,
-  '/friends': Friends
-};
-
-// const router = new VueRouter({
-//   routes
-// });
+const router = new VueRouter({
+  routes
+});
 
 // use your firebase info
 var firebaseConfig = {
@@ -50,20 +53,20 @@ firebase.initializeApp(firebaseConfig)
 
 new AOS.init()
 
-// new Vue({
-//   render: (h) => h(App),
-//   router
-// }).$mount('#app')
-
 new Vue({
-  el: '#app',
-  data: {
-    currentRoute: window.location.pathname
-  },
-  computed: {
-    ViewComponent () {
-      return routes[this.currentRoute] || NotFound
-    }
-  },
-  render (h) { return h(this.ViewComponent) }
-})
+  render: (h) => h(App),
+  router
+}).$mount('#app')
+
+// new Vue({
+//   el: '#app',
+//   data: {
+//     currentRoute: window.location.pathname
+//   },
+//   computed: {
+//     ViewComponent () {
+//       return routes[this.currentRoute] || NotFound
+//     }
+//   },
+//   render (h) { return h(this.ViewComponent) }
+// })
