@@ -21,11 +21,20 @@ Vue.component('Button', Button)
 
 const NotFound = { template: '<p>Page not found</p>' }
 
+// const routes = [
+//   { path: "/hello", component: App },
+
+// ];
+
 const routes = {
   '/': App,
   '/families': Families,
   '/friends': Friends
 };
+
+// const router = new VueRouter({
+//   routes
+// });
 
 // use your firebase info
 var firebaseConfig = {
@@ -43,6 +52,7 @@ new AOS.init()
 
 // new Vue({
 //   render: (h) => h(App),
+//   router
 // }).$mount('#app')
 
 new Vue({
