@@ -10,7 +10,7 @@
           <div class="bottom-sheet-header">
             <!-- <img class="image" :src="present.imageUrl" /> -->
             <img src="~@/assets/images/flower.png" class="image" />
-            <p>Hi {{ name }}, You're Invited!</p>
+            <p>Hi {{ name }}, you're invited!</p>
             <!-- <img
               class="icon-close"
               @click="handleClose"
@@ -56,7 +56,7 @@
             :class="['button-bottom', { active: true }]"
             @click="handleClose"
           >
-            Buka Undangan
+            Open Invitation
           </button>
         </div>
       </div>
@@ -84,6 +84,7 @@ export default {
       name: "",
       senderName: null,
       message: null,
+      music: sound
     };
   },
   props: {
