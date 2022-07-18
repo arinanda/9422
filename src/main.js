@@ -21,22 +21,14 @@ Vue.use(VueRouter)
 Vue.component('Divider', Divider)
 Vue.component('Button', Button)
 
-// const NotFound = { template: '<p>Page not found</p>' }
-
 const routes = [
-  { path: "/", component: App, props: (route) => ({ name: route.query.name }) },
   { path: "/families", component: Families },
   { path: "/friends", component: Friends },
 ];
 
-// const routes = {
-//   '/': App,
-//   '/families': Families,
-//   '/friends': Friends
-// };
-
 const router = new VueRouter({
-  routes
+  routes,
+  mode: 'history'
 });
 
 // use your firebase info
@@ -57,16 +49,3 @@ new Vue({
   render: (h) => h(App),
   router
 }).$mount('#app')
-
-// new Vue({
-//   el: '#app',
-//   data: {
-//     currentRoute: window.location.pathname
-//   },
-//   computed: {
-//     ViewComponent () {
-//       return routes[this.currentRoute] || NotFound
-//     }
-//   },
-//   render (h) { return h(this.ViewComponent) }
-// })
