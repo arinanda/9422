@@ -30,15 +30,15 @@
 
 <script>
 // import FloatingButton from "./components/FloatingButton.vue"
-import IntroMovie from "./components/IntroMovie.vue";
-import Live from "./components/Live.vue";
-import Gallery from "./components/Gallery.vue";
+import IntroMovie from "./components/families/IntroMovie.vue";
+import Live from "./components/families/Live.vue";
+import Gallery from "./components/families/Gallery.vue";
 import Funding from "./components/Funding.vue";
 import Credit from "./components/Credit.vue";
-import Celebrate from "./components/Celebrate.vue";
+import Celebrate from "./components/families/Celebrate.vue";
 import Map from "./components/Map.vue";
 import FlowerRain from "./components/FlowerRain.vue";
-import BottomSheet from "./components/BottomSheet.vue";
+import BottomSheet from "./components/families/BottomSheet.vue";
 import firebase from "firebase";
 // const {Howl} = require('howler');
 
@@ -58,7 +58,7 @@ export default {
   },
   data() {
     return {
-      isOpen: false,
+      isOpen: true,
       presents: [],
       selectedPresent: {},
     };
