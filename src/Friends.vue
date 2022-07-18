@@ -23,20 +23,22 @@
       v-scroll-lock="isOpen"
       :present="selectedPresent"
     />
+    <!-- <Music/> -->
   </div>
 </template>
 
 <script>
 // import FloatingButton from "./components/FloatingButton.vue"
 import IntroMovie from "./components/friends/IntroMovie.vue";
-import Live from "./components/Live.vue";
-import Gallery from "./components/Gallery.vue";
+import Live from "./components/friends/Live.vue";
+import Gallery from "./components/friends/Gallery.vue";
 import Funding from "./components/Funding.vue";
 import Credit from "./components/Credit.vue";
-import Celebrate from "./components/Celebrate.vue";
+import Celebrate from "./components/friends/Celebrate.vue";
 import Map from "./components/Map.vue";
 import FlowerRain from "./components/FlowerRain.vue";
-import BottomSheet from "./components/BottomSheet.vue";
+import BottomSheet from "./components/friends/BottomSheet.vue";
+// import Music from "./components/friends/Music.vue";
 import firebase from "firebase";
 
 export default {
@@ -52,17 +54,17 @@ export default {
     FlowerRain,
     BottomSheet,
     Map,
+    // Music
   },
   data() {
     return {
-      isOpen: false,
+      isOpen: true,
       presents: [],
       selectedPresent: {},
     };
   },
   created() {
     this.loadPresents();
-    // this.playSound();
   },
   methods: {
     loadPresents() {
