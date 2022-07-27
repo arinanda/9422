@@ -114,23 +114,23 @@
 export default {
   name: "Celebrate",
   props: {
-    presents: {
-      type: Array,
-      default: () => [],
-    },
+    // presents: {
+    //   type: Array,
+    //   default: () => [],
+    // },
   },
   methods: {
-    handleSubmitClick(present) {
-      if (present.isSoldout) {
-        const isConfirmed = confirm("이미 선물 받은 상품이에요. 혹시 구매링크가 궁금하신가요?");
-        if (isConfirmed) {
-          window.open(present.link);
-        }
-        return;
-      }
+    // handleSubmitClick(present) {
+    //   if (present.isSoldout) {
+    //     const isConfirmed = confirm("이미 선물 받은 상품이에요. 혹시 구매링크가 궁금하신가요?");
+    //     if (isConfirmed) {
+    //       window.open(present.link);
+    //     }
+    //     return;
+    //   }
 
-      this.$emit("click", present);
-    },
+    //   this.$emit("click", present);
+    // },
   },
 };
 </script>
