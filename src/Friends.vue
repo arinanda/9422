@@ -8,15 +8,17 @@
     <Divider />
     <Gallery />
     <Divider />
-    <Celebrate @click="handleClick" :presents="presents" />
+    <!-- <Celebrate @click="handleClick" :presents="presents" /> -->
+    <Celebrate />
     <Divider />
-    <Map />
+    <!-- <Map /> -->
+    <Form />
     <Divider />
-    <Funding />
+    <!-- <Funding />
     <Divider />
     <div style="display: none">
       <Credit />
-    </div>
+    </div> -->
     <BottomSheet
       :is-open="isOpen"
       @close="handleClose"
@@ -32,14 +34,15 @@
 import IntroMovie from "./components/friends/IntroMovie.vue";
 import Live from "./components/friends/Live.vue";
 import Gallery from "./components/friends/Gallery.vue";
-import Funding from "./components/Funding.vue";
-import Credit from "./components/Credit.vue";
+// import Funding from "./components/Funding.vue";
+// import Credit from "./components/Credit.vue";
 import Celebrate from "./components/friends/Celebrate.vue";
-import Map from "./components/Map.vue";
+// import Map from "./components/Map.vue";
 import FlowerRain from "./components/FlowerRain.vue";
 import BottomSheet from "./components/friends/BottomSheet.vue";
 // import Music from "./components/friends/Music.vue";
 import firebase from "firebase";
+import Form from "./components/friends/Form.vue";
 
 export default {
   name: "Friends",
@@ -48,14 +51,14 @@ export default {
     IntroMovie,
     Live,
     Gallery,
-    Funding,
-    Credit,
+    // Funding,
+    // Credit,
     Celebrate,
     FlowerRain,
     BottomSheet,
-    Map,
-    // Music
-  },
+    // Map,
+    Form
+},
   data() {
     return {
       isOpen: true,
@@ -86,16 +89,6 @@ export default {
     handleClose() {
       this.isOpen = false;
     },
-    // playSound() {
-    //     var sound = new Howl({
-    //         src: ['../public/audio/new-home.mp3'],
-    //         volume: 0.1,
-    //         preload: true,
-    //         autoplay: true,
-    //         loop: true
-    //     });
-    //     sound.play();
-    // }
   },
 };
 </script>
