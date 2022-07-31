@@ -26,7 +26,7 @@ import Gallery from "./components/families/Gallery.vue";
 import Celebrate from "./components/families/Celebrate.vue";
 import FlowerRain from "./components/FlowerRain.vue";
 import BottomSheet from "./components/families/BottomSheet.vue";
-import Form from "./components/families-az/Form.vue";
+import Form from "./components/families/Form.vue";
 
 export default {
   name: "Families",
