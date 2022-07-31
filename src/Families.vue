@@ -1,102 +1,63 @@
-
-
 <template>
   <div id="kyong">
     <router-view></router-view>
     <FlowerRain />
     <IntroMovie />
-    <!-- <FloatingButton /> -->
     <Live />
     <Divider />
     <Gallery />
     <Divider />
-    <Celebrate @click="handleClick" :presents="presents" />
+    <Celebrate />
     <Divider />
-    <Map />
+    <Form />
     <Divider />
-    <Funding />
-    <Divider />
-    <div style="display: none">
-      <Credit />
-    </div>
     <BottomSheet
       :is-open="isOpen"
       @close="handleClose"
       v-scroll-lock="isOpen"
-      :present="selectedPresent"
     />
   </div>
 </template>
 
 <script>
-// import FloatingButton from "./components/FloatingButton.vue"
 import IntroMovie from "./components/families/IntroMovie.vue";
 import Live from "./components/families/Live.vue";
 import Gallery from "./components/families/Gallery.vue";
-import Funding from "./components/Funding.vue";
-import Credit from "./components/Credit.vue";
 import Celebrate from "./components/families/Celebrate.vue";
-import Map from "./components/Map.vue";
 import FlowerRain from "./components/FlowerRain.vue";
 import BottomSheet from "./components/families/BottomSheet.vue";
-import firebase from "firebase";
-// const {Howl} = require('howler');
+import Form from "./components/families-az/Form.vue";
 
 export default {
   name: "Families",
   components: {
-    // FloatingButton,
     IntroMovie,
     Live,
     Gallery,
-    Funding,
-    Credit,
     Celebrate,
     FlowerRain,
     BottomSheet,
-    Map,
+    Form
   },
   data() {
     return {
       isOpen: true,
-      presents: [],
-      selectedPresent: {},
+      title: "Walimatul 'Urs"
     };
   },
+  head: {
+    title () {
+        return {
+          inner: this.title
+        }
+    }
+  },
   created() {
-    this.loadPresents();
-    // this.playSound();
   },
   methods: {
-    loadPresents() {
-      const presentsRef = firebase.database().ref("presents");
-      presentsRef.on("value", (snapshot) => {
-        const presents = snapshot.val();
-        this.presents = presents.map((present, index) => {
-          return {
-            ...present,
-            id: index,
-          };
-        });
-      });
-    },
-    handleClick(present) {
-      this.isOpen = true;
-      this.selectedPresent = present;
-    },
     handleClose() {
       this.isOpen = false;
     },
-    // playSound() {
-    //     var sound = new Howl({
-    //         src: ['../public/audio/new-home.mp3'],
-    //         volume: 0.1,
-    //         preload: true,
-    //         autoplay: true,
-    //         loop: true
-    //     });
-    //     sound.play();
-    // }
   },
 };
 </script>
