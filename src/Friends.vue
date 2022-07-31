@@ -3,60 +3,41 @@
     <router-view></router-view>
     <FlowerRain />
     <IntroMovie />
-    <!-- <FloatingButton /> -->
     <Live />
     <Divider />
     <Gallery />
     <Divider />
-    <!-- <Celebrate @click="handleClick" :presents="presents" /> -->
     <Celebrate />
     <Divider />
-    <!-- <Map /> -->
     <Form />
     <Divider />
-    <!-- <Funding />
-    <Divider />
-    <div style="display: none">
-      <Credit />
-    </div> -->
     <BottomSheet
       :is-open="isOpen"
       @close="handleClose"
       v-scroll-lock="isOpen"
       :present="selectedPresent"
     />
-    <!-- <Music/> -->
   </div>
 </template>
 
 <script>
-// import FloatingButton from "./components/FloatingButton.vue"
 import IntroMovie from "./components/friends/IntroMovie.vue";
 import Live from "./components/friends/Live.vue";
 import Gallery from "./components/friends/Gallery.vue";
-// import Funding from "./components/Funding.vue";
-// import Credit from "./components/Credit.vue";
 import Celebrate from "./components/friends/Celebrate.vue";
-// import Map from "./components/Map.vue";
 import FlowerRain from "./components/FlowerRain.vue";
 import BottomSheet from "./components/friends/BottomSheet.vue";
-// import Music from "./components/friends/Music.vue";
-import firebase from "firebase";
 import Form from "./components/friends/Form.vue";
 
 export default {
   name: "Friends",
   components: {
-    // FloatingButton,
     IntroMovie,
     Live,
     Gallery,
-    // Funding,
-    // Credit,
     Celebrate,
     FlowerRain,
     BottomSheet,
-    // Map,
     Form
 },
   data() {
@@ -64,28 +45,19 @@ export default {
       isOpen: true,
       presents: [],
       selectedPresent: {},
+      title: "The Wedding"
     };
   },
+  head: {
+    title () {
+        return {
+          inner: this.title
+        }
+    }
+  },
   created() {
-    this.loadPresents();
   },
   methods: {
-    loadPresents() {
-      const presentsRef = firebase.database().ref("presents");
-      presentsRef.on("value", (snapshot) => {
-        const presents = snapshot.val();
-        this.presents = presents.map((present, index) => {
-          return {
-            ...present,
-            id: index,
-          };
-        });
-      });
-    },
-    handleClick(present) {
-      this.isOpen = true;
-      this.selectedPresent = present;
-    },
     handleClose() {
       this.isOpen = false;
     },
