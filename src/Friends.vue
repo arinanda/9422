@@ -15,7 +15,6 @@
       :is-open="isOpen"
       @close="handleClose"
       v-scroll-lock="isOpen"
-      :present="selectedPresent"
     />
   </div>
 </template>
