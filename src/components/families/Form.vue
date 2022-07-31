@@ -3,7 +3,7 @@
         <img src="~@/assets/images/cat.png" class="cat" />
         <div class="form-container">
             <div class="form-header">
-                <div class="title">Kehadiran</div>
+                <div class="title">Konfirmasi Kehadiran</div>
             </div>
                 
             <form @submit.prevent="onFormSubmit">
@@ -43,7 +43,7 @@ export default {
   name: "Form",
   data() {
     return {
-        az: {
+        za: {
             name:'',
             attend:'',
             pax:'',
@@ -67,7 +67,7 @@ export default {
         onFormSubmit(event) {
             event.preventDefault()
             db.collection('families-za').add(this.za).then(() => {
-                alert("Thank you for filling the attendance form, see you later!");
+                alert("Terima kasih atas konfirmasi kehadirannya.");
                 this.za.name = ''
                 this.za.attend = ''
                 this.za.pax = ''
