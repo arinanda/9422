@@ -1,7 +1,7 @@
 <template>
   <div class="live">
     <p class = "desc">
-      Artwork by @gemilangprtm
+      Artwork by <a href="https://instagram.com/gemilangprtm" target="_blank">@gemilangprtm</a>
     </p>
     <img src="~@/assets/images/hands.png" class="hands" />
     <div>
@@ -18,29 +18,13 @@
         ( Ar-Ruum : 21 )
       </p>
     </div>
-    <!-- <Button @click="playSound">Watch Live</Button> -->
   </div>
 </template>
 
 <script>
-const {Howl} = require('howler');
 export default {
   name: "Divider",
   methods: {
-    attendance() {
-      window.open("https://youtu.be/yU9UULnBt0w");
-    },
-    playSound() {
-        var sound = new Howl({
-            src: 'https://www.mboxdrive.com/New%20Home.mp3',
-            volume: 0.1,
-            html5: true,
-            preload: true,
-            autoplay: true,
-            loop: true
-        });
-        sound.play();
-    }
   },
 };
 </script>
@@ -64,6 +48,9 @@ export default {
       font-size: 10px;
       opacity: 0.6;
       margin-bottom: 36px;
+      a {
+        color: #295238;
+      }
     }
     &.header {
       color: #295238;

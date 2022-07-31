@@ -8,53 +8,12 @@
       <div class="bottom-sheet-container" v-show="isOpen">
         <div class="bottom-sheet">
           <div class="bottom-sheet-header">
-            <!-- <img class="image" :src="present.imageUrl" /> -->
             <img src="~@/assets/images/flower.png" class="image" />
             <p>
               Kepada Yth. Bapak/Ibu/Saudara/i<br/><br/>
-              <a class="for">{{ name }}</a>
+              <a class="for">{{ kepada }}</a>
             </p>
-            <!-- <img
-              class="icon-close"
-              @click="handleClose"
-              src="~@/assets/images/close.svg"
-            /> -->
           </div>
-
-          <!-- <div class="form-container">
-            <div class="form-header">
-              <div class="title">{{ present.name }} | {{ present.model }}</div>
-              <div class="price-container">
-                <div class="price">
-                  {{
-                    present.price &&
-                    present.price
-                      .toString()
-                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-                  }}원
-                </div>
-              </div>
-            </div>
-
-            <div class="form-body">
-              <input
-                class="input name"
-                type="text"
-                placeholder="고마운 당신의 이름은?"
-                v-model="senderName"
-              />
-              <textarea
-                v-model="message"
-                class="input message"
-                type="textarea"
-                placeholder="전하고 싶은 메시지를 남겨주세요."
-              />
-              <div class="description">
-                선물하기를 누르면 신혼집 주소가 자동 복사됩니다.
-              </div>
-            </div>
-          </div> -->
-
           <button
             :class="['button-bottom', { active: true }]"
             @click="handleClose"
@@ -72,10 +31,8 @@
 </template>
 
 <script>
-// import firebase from "firebase";
 const {Howl} = require('howler');
 var sound = new Howl({
-            // src: 'https://www.mboxdrive.com/new-home.mp3',
             src: 'https://cdn.jsdelivr.net/gh/arinanda/audio/new-home.mp3',
             volume: 1.0,
             html5: true,
@@ -88,7 +45,7 @@ export default {
   name: "BottomSheet",
   data() {
     return {
-      name: "",
+      kepada: "",
       senderName: null,
       message: null,
     };
@@ -97,10 +54,6 @@ export default {
     isOpen: {
       type: Boolean,
       default: true,
-    },
-    present: {
-      type: Object,
-      default: () => {},
     },
   },
   computed: {
@@ -113,59 +66,9 @@ export default {
     soundControl() {
       return sound.playing() ? sound.pause() : sound.play();
     }
-
-
-    // handleClick() {
-
-    //   const isConfirmed = confirm(
-    //     `정말 ${this.present.name} 선물을 하시겠어요? 확인해주시면 선물 완료로 표시됩니다.`
-    //   );
-
-    //   if (!isConfirmed) {
-    //     return;
-    //   }
-
-    //   firebase
-    //     .database()
-    //     .ref("presents/" + this.present.id)
-    //     .set(
-    //       {
-    //         ...this.present,
-    //         isSoldout: true,
-    //         senderName: this.senderName,
-    //         message: this.message,
-    //       },
-    //       (error) => {
-    //         if (error) {
-    //           console.error(error.message);
-    //           return;
-    //         }
-
-    //         this.copyAddress();
-    //         window.open(this.present.link);
-    //         this.handleClose();
-    //         this.senderName = null;
-    //         this.message = null;
-    //       }
-    //     );
-    // },
-    // copyAddress() {
-    //   const address = "서울시 강남구 역삼동 792-33 서담빌리지A동 205호";
-    //   this.$copyText(address).then(
-    //     function () {
-    //       alert("신혼집 주소가 복사되었어요. 구매링크로 이동합니다~!");
-    //     },
-    //     function () {
-    //       prompt(
-    //         "아래 신혼집 주소를 복사해주세요. 확인 눌러주시면 구매링크로 이동합니다~!",
-    //         address
-    //       );
-    //     }
-    //   );
-    // },
   },
   mounted() {
-    this.name = this.$route.query.name;
+    this.kepada = this.$route.query.kepada;
   },
 };
 </script>
