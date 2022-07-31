@@ -24,6 +24,8 @@
                         <option value="3">3 of us</option>
                     </select>
 
+                    <textarea class="input wish" name="Text1" cols="40" rows="3" placeholder="Your wishes for us" v-model="friends.wish"></textarea>
+
                     <button
                     :class="['button-bottom', { active: true }]"
                     >
@@ -44,7 +46,8 @@ export default {
         friends: {
             name:'',
             attend:'',
-            pax:''
+            pax:'',
+            wish:''
         }
     };
   },
@@ -64,10 +67,11 @@ export default {
         onFormSubmit(event) {
             event.preventDefault()
             db.collection('friends').add(this.friends).then(() => {
-                alert("Attendance successfully recorded!");
+                alert("Thank you for filling the attendance form, see you later!");
                 this.friends.name = ''
                 this.friends.attend = ''
                 this.friends.pax = ''
+                this.friends.wish = ''
             }).catch((error) => {
                 console.log(error);
             });
@@ -138,7 +142,7 @@ export default {
             justify-content: space-between;
             flex: 0 0 0;
             align-items: left;
-            
+
             .input {
             width: 100%;
             padding: 12px;
@@ -147,6 +151,11 @@ export default {
 
             &.name {
                 height: 43px;
+                margin-bottom: 12px;
+            }
+
+            &.wish {
+                font-family: Arial;
                 margin-bottom: 12px;
             }
 

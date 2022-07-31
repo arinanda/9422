@@ -29,24 +29,9 @@
 </template>
 
 <script>
-const {Howl} = require('howler');
 export default {
   name: "Divider",
   methods: {
-    attendance() {
-      window.open("https://youtu.be/yU9UULnBt0w");
-    },
-    playSound() {
-        var sound = new Howl({
-            src: 'https://www.mboxdrive.com/New%20Home.mp3',
-            volume: 0.1,
-            html5: true,
-            preload: true,
-            autoplay: true,
-            loop: true
-        });
-        sound.play();
-    }
   },
 };
 </script>

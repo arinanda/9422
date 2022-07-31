@@ -1,7 +1,7 @@
 <template>
   <div class="live">
     <p class = "desc">
-      Artwork by @gemilangprtm
+      Artwork by <a href="https://instagram.com/gemilangprtm" target="_blank">@gemilangprtm</a>
     </p>
     <img src="~@/assets/images/hands.png" class="hands" />
     <div>
@@ -17,7 +17,6 @@
         ( Ar-Ruum : 21 )
       </p>
     </div>
-    <!-- <Button @click="attendance">Watch Live</Button> -->
   </div>
 </template>
 
@@ -52,6 +51,9 @@ export default {
       font-size: 10px;
       opacity: 0.6;
       margin-bottom: 36px;
+      a {
+        color: #295238;
+      }
     }
     &.header {
       color: #295238;

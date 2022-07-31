@@ -5,13 +5,6 @@
     </div>
     <div class="movie">
       <img src="/intro.gif">
-      <!-- <video
-        poster="//img/video-thumbnail.jpg"
-        :autoplay="getOS() !== 'iOS'"
-        controls
-      >
-        <source src="" type="video/mp4" />
-      </video> -->
     </div>
   </div>
 </template>
