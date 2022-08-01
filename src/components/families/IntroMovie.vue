@@ -4,7 +4,7 @@
       <img src="~@/assets/images/header-logo-2.png" />
     </div>
     <div class="movie">
-      <img src="/intro.gif">
+      <img src="https://cdn.jsdelivr.net/gh/arinanda/audio/intro.gif">
     </div>
   </div>
 </template>
