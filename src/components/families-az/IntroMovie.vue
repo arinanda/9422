@@ -4,7 +4,7 @@
       <img src="~@/assets/images/header-logo-az.png" />
     </div>
     <div class="movie">
-      <img src="https://cdn.jsdelivr.net/gh/arinanda/audio/intro.gif">
+      <img src="https://cdn.jsdelivr.net/gh/arinanda/audio/intros.gif">
     </div>
   </div>
 </template>
