@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/9422/" : "/",
+  publicPath: '/',
   css: {
     loaderOptions: {
       scss: {
