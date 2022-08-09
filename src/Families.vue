@@ -50,7 +50,12 @@ export default {
         return {
           inner: this.title
         }
-    }
+    },
+    meta: [
+      { property: "og:title", content: "Walimatul 'Urs Zulfa & Adib" },
+      { property: "og:image", content: "/img/thumbnail.jpg" },
+      { property: "og:image:type", content: "image/jpeg" },
+    ]
   },
   created() {
   },
