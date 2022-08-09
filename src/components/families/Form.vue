@@ -17,7 +17,7 @@
                     </select>
 
                     <select v-if="za.attend === 'yes'" id="pax" class="input pax" v-model="za.pax">
-                        <option value="" disabled selected>Jumlah tamu: </option>
+                        <option value="" disabled selected>Jumlah tamu</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
