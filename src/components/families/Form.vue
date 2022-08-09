@@ -11,7 +11,7 @@
                     <input class="input name" type="text" placeholder= "Nama anda" v-model="za.name"/>
 
                     <select id="attend" class="input attend" v-model="za.attend">
-                        <option value="" disabled selected>Apakah anda akan menghadiri resepsi? </option>
+                        <option value="" disabled selected>Konfirmasi kehadiran resepsi</option>
                         <option value="yes">Ya</option>
                         <option value="no">Tidak</option>
                     </select>
