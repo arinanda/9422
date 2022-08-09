@@ -47,7 +47,8 @@ export default {
             name:'',
             attend:'',
             pax:'',
-            wish:''
+            wish:'',
+            invitee:this.$route.query.for
         }
     };
   },
