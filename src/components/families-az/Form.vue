@@ -9,15 +9,14 @@
             <form @submit.prevent="onFormSubmit">
                 <div class="form-body">
                     <input class="input name" type="text" placeholder= "Nama anda" v-model="az.name"/>
-
+                    
                     <select id="attend" class="input attend" v-model="az.attend">
-                        <option value="" disabled selected>Saya akan menghadiri: </option>
-                        <option value="akad_resepsi">Akad Nikah & Resepsi</option>
-                        <option value="akad">Akad Nikah</option>
-                        <option value="resepsi">Resepsi</option>
+                        <option value="" disabled selected>Apakah anda akan menghadiri resepsi? </option>
+                        <option value="yes">Ya</option>
+                        <option value="no">Tidak</option>
                     </select>
 
-                    <select id="pax" class="input pax" v-model="az.pax">
+                    <select v-if="az.attend === 'yes'" id="pax" class="input pax" v-model="az.pax">
                         <option value="" disabled selected>Jumlah tamu: </option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -47,8 +46,9 @@ export default {
             name:'',
             attend:'',
             pax:'',
-            wish:''
-        }
+            wish:'',
+            invitee:this.$route.query.kepada
+        },
     };
   },
   props: {
@@ -103,7 +103,7 @@ export default {
         display: flex;
         flex: 1 1 230px;
         flex-direction: column;
-        padding: 16px 16px 8px 16px;
+        padding: 16px 0px 8px 0px;
         // min-height: 280px;
 
         .form-header {
@@ -119,7 +119,7 @@ export default {
                 line-height: normal;
                 flex: 1;
                 word-break: keep-all;
-                overflow: hidden;
+                overflow: visible;
             }
 
             .price-container {
@@ -136,7 +136,7 @@ export default {
         }
 
         .form-body {
-            padding-top: 24px;
+            padding-top: 36px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
