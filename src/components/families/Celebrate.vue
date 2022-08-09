@@ -28,6 +28,9 @@
       Batu Ampar, Kec. Balikpapan Utara
       Kota Balikpapan, Kalimantan Timur
     </p>
+    <p class="notes">
+      Note: Tamu Pria & Wanita akan dipisah
+    </p>
 
     <div class="map-container" ref="gal">
       <iframe 
@@ -82,6 +85,11 @@ export default {
   p {
     margin-bottom: 16px;
     line-height: 24px;
+
+    &.notes {
+      color: #EE4B2B;
+    }
+
     &.black {
       color: #202121;
     }
