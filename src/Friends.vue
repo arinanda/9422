@@ -55,8 +55,11 @@ export default {
     },
     meta: [
       { property: "og:title", content: "The Wedding of Zulfa & Adib" },
+      { property: "og:url", content: "https://zulfadib.com/friends" },
       { property: "og:image", content: "/img/thumbnail.jpg" },
       { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:type", content: "website" },
+      { property: "og:description", content: "Balikpapan, 4 September 2022" },
     ]
   },
   created() {
