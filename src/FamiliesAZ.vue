@@ -57,8 +57,11 @@ export default {
     },
     meta: [
       { property: "og:title", content: "Walimatul 'Urs Adib & Zulfa" },
-      { property: "og:image", content: "/img/thumbnail.jpg" },
+      { property: "og:url", content: "https://zulfadib.com/families/az" },
+      { property: "og:image", content: "https://cdn.jsdelivr.net/gh/arinanda/audio/thumbnail.jpg" },
       { property: "og:image:type", content: "image/jpeg" },
+      { property: "og:type", content: "website" },
+      { property: "og:description", content: "Balikpapan, 4 September 2022" },
     ]
   },
   created() {
