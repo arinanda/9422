@@ -60,7 +60,6 @@ export default {
     }
   }
   .movie {
-    //todo: 실제론 iframe 아니라 video 태그 넣을거임. 임시로 유튜브 넣어둠
     video {
       width: 100vw;
       height: 100vw;

@@ -144,46 +144,40 @@ export default {
             align-items: left;
 
             .input {
-            width: 100%;
-            padding: 12px;
-            border-radius: 2px;
-            border: solid 1px #999999;
+                width: 100%;
+                padding: 12px;
+                border-radius: 2px;
+                border: solid 1px #999999;
 
-            &.name {
-                height: 43px;
-                margin-bottom: 12px;
-            }
+                &.name {
+                    height: 43px;
+                    margin-bottom: 12px;
+                }
 
-            &.wish {
-                font-family: Arial;
-                margin-bottom: 12px;
-            }
+                &.wish {
+                    font-family: Arial;
+                    margin-bottom: 12px;
+                }
 
-            &.attend {
-                height: 43px;
-                margin-bottom: 12px;
-                -webkit-appearance:none;
-            }
-            
-            &.pax {
-                height: 43px;
-                margin-bottom: 12px;
-                -webkit-appearance:none;
-            }
+                &.attend {
+                    height: 43px;
+                    margin-bottom: 12px;
+                    -webkit-appearance:none;
+                }
+                
+                &.pax {
+                    height: 43px;
+                    margin-bottom: 12px;
+                    -webkit-appearance:none;
+                }
 
-            &.message {
-                margin-bottom: 16px;
-                height: 50px;
-                min-height: 50px;
-                vertical-align: to-upper-case($string: "");
-                resize: none;
-            }
-
-            //   .button {
-            //     width: 100%;
-            //     background-color: #ffb22c;
-            //     color: #202121;
-            //   }
+                &.message {
+                    margin-bottom: 16px;
+                    height: 50px;
+                    min-height: 50px;
+                    vertical-align: to-upper-case($string: "");
+                    resize: none;
+                }
             }
 
             .description {
