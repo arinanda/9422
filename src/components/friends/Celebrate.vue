@@ -47,6 +47,18 @@
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
+
+    <p class="underline header">
+      <br/>
+      Notes
+    </p>
+    <p>
+      - Dinner's dresscode: Casual with <a href="https://cdn.jsdelivr.net/gh/arinanda/audio/pallete.png" target="_blank">Soft Earth Tone</a> colored<br/><br/>
+      - Dinner's venue is literally beach-side and visitors are allowed to go down the coastline. You might want to bring a change of clothes and sandals<br/><br/>
+      - You're most likely need to pay entrance fee at the dinner's venue gate. Please prepare some cash (around IDR 15k or SGD1.5) and give the ticket to us for reimburse<br/><br/>
+      - For our non-Balikpapan or non-Indonesian fellow, do note that Balikpapan's weather is extremely unpredictable<br/><br/>
+      - You can use Grab/Gojek/Maxim for commuting around Balikpapan
+    </p>
   </div>
 </template>
 
