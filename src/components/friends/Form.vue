@@ -15,9 +15,10 @@
                         <option value="wedding_dinner">Wedding Ceremony & Dinner</option>
                         <option value="wedding">Wedding Ceremony</option>
                         <option value="dinner">Dinner</option>
+                        <option value="-">Can't Attend :(</option>
                     </select>
 
-                    <select id="pax" class="input pax" v-model="friends.pax">
+                    <select v-if="(friends.attend !== '' && friends.attend !== '-')" id="pax" class="input pax" v-model="friends.pax">
                         <option value="" disabled selected>How many of you will attend?</option>
                         <option value="1">Just me</option>
                         <option value="2">2 of us</option>
