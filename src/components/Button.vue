@@ -1,7 +1,7 @@
 <template>
   <div class="button-container">
     <img src="~@/assets/images/leaf-left.png" class="leaf" />
-    <button class="button" disabled v-on="$listeners"><slot>Button</slot></button>
+    <button class="button" v-on="$listeners"><slot>Button</slot></button>
     <img src="~@/assets/images/leaf-right.png" class="leaf" />
   </div>
 </template>
@@ -29,8 +29,8 @@ export default {
     margin: 0 10px;
     line-height: 44px;
     color: #ffffff;
-    // background-color: #295238;
-    background-color: #999999;
+    background-color: #295238;
+    // background-color: #999999;
   }
 }
 </style>
