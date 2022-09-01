@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     attendance() {
-      window.open("https://youtu.be/yU9UULnBt0w");
+      window.open("https://youtu.be/0V5NPhvr0m4");
     },
   },
 };
